@@ -1,0 +1,7 @@
+{
+  "allowedHosts": ["https://cdpn.io"],
+  "routes": [
+    { "route": "/", "controller": "main" },
+    { "route": "/distance", "controller": "distanceapi" }
+  ]
+}
