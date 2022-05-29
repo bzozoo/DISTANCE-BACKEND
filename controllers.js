@@ -1,4 +1,5 @@
 const allowedHosts = require("./config.json").allowedHosts;
+const Template = require("./templates");
 module.exports = {
   main,
   distanceapi,
@@ -6,7 +7,8 @@ module.exports = {
 };
 
 function main(req, res) {
-  res.write("Distance API");
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.write(Template.MainTempate());
   res.end();
 }
 
@@ -34,6 +36,7 @@ async function distanceapi(req, res) {
 }
 
 function notfound(req, res) {
+  res.writeHead(404, { "Content-Type": "text/html" });
   res.write("PANGE NOT FOUND...");
   res.end();
 }
